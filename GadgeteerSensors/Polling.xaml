@@ -1,0 +1,65 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<Page x:Class="Winiot.GadgeteerSensors.Polling" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:Winiot.GadgeteerSensors" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+  <Grid x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <StackPanel Orientation="Vertical">
+            <TextBlock x:Name="InputTextBlock" TextWrapping="Wrap" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Polls for gadgeteer sensor data and displays the values."/>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="GetDataButton" Content="Poll Local Sensor Data" Margin="10,0,10,0" Click="GetData"/>
+            </StackPanel>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,20,0,30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="20"/>
+                    <ColumnDefinition Width="Auto" MinWidth="60"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Temperature (F):"/>
+                <TextBlock x:Name="Temperature" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Right" Text="No data"/>
+                <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Humidity (%):"/>
+                <TextBlock x:Name="Humidity" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Right" Text="No data"/>
+                <TextBlock TextWrapping="Wrap" Grid.Row="3" Grid.Column="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Light (%):"/>
+                <TextBlock x:Name="Light" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Right" Text="No data"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+        <Button x:Name="GetRemoteDataButton" Content="Poll Remote Sensor Data" Margin="10,0,10,0" Click="GetRemoteData"/>
+
+            </StackPanel>
+      <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,20,0,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" MinWidth="140"/>
+          <ColumnDefinition Width="Auto" MinWidth="60"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Remote Temperature (F):"/>
+                <TextBlock x:Name="RemoteAirTemperature" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Right" Text="No data"/>
+                <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Remote Humidity (%):"/>
+                <TextBlock x:Name="RemoteHumidity" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Right" Text="No data"/>
+                <TextBlock TextWrapping="Wrap" Grid.Row="2" Grid.Column="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Remote Soil Temperature (F):"/>
+                <TextBlock x:Name="RemoteSoilTemperature" TextWrapping="Wrap" Grid.Row="2" Grid.Column="1" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Right" Text="No data"/>
+                <TextBlock TextWrapping="Wrap" Grid.Row="3" Grid.Column="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Text="Remote Soil Moisture (%):"/>
+                <TextBlock x:Name="RemoteSoilMoisture" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Right" Text="No data"/>
+
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Page>
